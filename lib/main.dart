@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green)),
         routes: {
           Loginpage.routeName: (context) => Loginpage(),
-          Home.routeName: (context) => Home(),
+          Home.routeName: (context) => Home(
+                count: '0',
+              ),
         });
   }
 }

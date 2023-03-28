@@ -4,13 +4,15 @@ import 'package:foodticket/pageLayouts/login.dart';
 import 'dart:convert';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final String count;
+  const Home({super.key, required this.count});
   static const String routeName = "/home";
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+
   @override
   void initState() {
     super.initState();
@@ -33,7 +35,8 @@ class _HomeState extends State<Home> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("You need 3 tickets.", style: TextStyle(fontSize: 24)),
+          Text("You need ${widget.count} tickets.",
+              style: TextStyle(fontSize: 24)),
           SizedBox(
             height: 10,
           ),

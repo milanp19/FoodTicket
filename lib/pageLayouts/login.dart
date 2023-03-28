@@ -41,51 +41,48 @@ class _LoginpageState extends State<Loginpage> {
         fit: StackFit.expand,
         children: [
           Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Form(
-                key: formKey,
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextFormField(
-                          controller: _usernameController,
-                          validator: (s) {},
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            hintText: "Enter your name",
-                            labelText: "Name",
-                          ),
+            child: Form(
+              key: formKey,
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                        controller: _usernameController,
+                        validator: (s) {},
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          hintText: "Enter your name",
+                          labelText: "Name",
                         ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                        Text("How many tickets do you need?"),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .onPrimaryContainer,
-                                onPressed: subtractCount,
-                                icon: Icon(Icons.remove)),
-                            Text(count.toString()),
-                            IconButton(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .onPrimaryContainer,
-                                onPressed: addCount,
-                                icon: Icon(
-                                  Icons.add,
-                                )),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text("How many tickets do you need?"),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              onPressed: subtractCount,
+                              icon: Icon(Icons.remove)),
+                          Text(count.toString()),
+                          IconButton(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              onPressed: addCount,
+                              icon: Icon(
+                                Icons.add,
+                              )),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -96,7 +93,9 @@ class _LoginpageState extends State<Loginpage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Home()));
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Home(count: count.toString())));
         },
         child: const Icon(Icons.arrow_forward_outlined),
       ),
