@@ -34,7 +34,7 @@ class _LoginpageState extends State<Loginpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        title: Text("Login"),
+        title: Center(child: Text("Food Ticket")),
       ),
       backgroundColor: Theme.of(context).colorScheme.onSecondary,
       body: Stack(
